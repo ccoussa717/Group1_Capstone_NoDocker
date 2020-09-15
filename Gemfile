@@ -16,11 +16,14 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
 # Custom gem installs
+gem 'carrierwave', '~> 2.1'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'fast_jsonapi'
 gem "figaro"
 gem 'foreman', '~> 0.87.2'
 gem 'friendly_id', '~> 5.3'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'name_of_person', '~> 1.1', '>= 1.1.1'
 gem 'pagy', '~> 3.8', '>= 3.8.3'
 gem 'railties', '~>6'
@@ -29,6 +32,7 @@ gem "pay", "~> 2.2"
 gem 'simple_discussion', '~> 1.2'
 gem "stripe_event", "~> 2.3"
 gem "stripe", "~> 5.25"
+gem 'trix'
 gem 'whenever', '~> 1.0'
 
 group :development, :test do

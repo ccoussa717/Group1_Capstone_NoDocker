@@ -75,6 +75,13 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    carrierwave (2.1.0)
+      activemodel (>= 5.0.0)
+      activesupport (>= 5.0.0)
+      addressable (~> 2.6)
+      image_processing (~> 1.1)
+      mimemagic (>= 0.3.0)
+      mini_mime (>= 0.1.3)
     childprocess (3.0.0)
     chronic (0.10.2)
     coderay (1.1.3)
@@ -229,6 +236,8 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    trix (0.10.1)
+      rails
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -267,15 +276,18 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  carrierwave (~> 2.1)
   devise (~> 4.7, >= 4.7.2)
   faker (~> 2.13)
   fast_jsonapi
   figaro
   foreman (~> 0.87.2)
   friendly_id (~> 5.3)
+  gravatar_image_tag (~> 1.2)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  mini_magick (~> 4.10, >= 4.10.1)
   name_of_person (~> 1.1, >= 1.1.1)
   pagy (~> 3.8, >= 3.8.3)
   pay (~> 2.2)
@@ -293,6 +305,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   stripe (~> 5.25)
   stripe_event (~> 2.3)
+  trix
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
