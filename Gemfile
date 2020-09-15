@@ -18,6 +18,7 @@ gem 'webpacker', '~> 4.0'
 # Custom gem installs
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'fast_jsonapi'
+gem "figaro"
 gem 'foreman', '~> 0.87.2'
 gem 'friendly_id', '~> 5.3'
 gem 'name_of_person', '~> 1.1', '>= 1.1.1'
