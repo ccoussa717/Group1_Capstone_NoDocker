@@ -2,6 +2,8 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_account_manager, only: [:new, :create, :edit, :update, :destroy]
+
   # GET /jobs
   # GET /jobs.json
   def index
@@ -71,5 +73,11 @@ class JobsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def job_params
       params.require(:job).permit(:title, :description, :url, :job_type, :location, :company, :remote_ok, :appy_url, :avatar)
+    end
+
+    def require_account_manager
+      return head :unauthorized unless current_user.account_manager?
+
+      # Instead of returning head unauth, we should render a template.
     end
 end
