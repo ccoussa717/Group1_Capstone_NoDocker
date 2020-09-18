@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  account_manager        :boolean          default(TRUE)
 #  admin                  :boolean          default(FALSE)
 #  card_brand             :string
 #  card_exp_month         :string
