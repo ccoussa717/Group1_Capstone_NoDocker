@@ -5,7 +5,11 @@ class JobsController < ApplicationController
   before_action :require_account_manager, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.all.order("created_at desc")
+    if(params.has_key?(:job_type))
+      @jobs = Job.where(job_type: params[:job_type]).order("created_at desc")
+    else
+     @jobs = Job.all.order("created_at desc")
+    end
   end
 
   def show
