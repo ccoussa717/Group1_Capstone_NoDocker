@@ -8,17 +8,12 @@
 #  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :bigint
+#
+# Indexes
+#
+#  index_companies_on_user_id  (user_id)
 #
 class Company < ApplicationRecord
     has_many :reviews
-
-    before_create :slugify
-    
-    def slugify
-        self.slug = name.parameterize
-    end
-
-    def avg_score
-        reviews.average(:score).round(2).to_f
-    end
 end

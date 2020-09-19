@@ -4,6 +4,7 @@ class CreateCompanies < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image_url
       t.string :slug
+      t.references :user
 
       t.timestamps
     end

@@ -4,7 +4,9 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.integer :score
-      t.belongs_to :company, null: false, foreign_key: true
+      t.string :Company
+      t.string :belongs_to
+      t.references :user
 
       t.timestamps
     end

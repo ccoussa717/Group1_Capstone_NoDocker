@@ -3,20 +3,18 @@
 # Table name: reviews
 #
 #  id          :bigint           not null, primary key
+#  Company     :string
+#  belongs_to  :string
 #  description :string
 #  score       :integer
 #  title       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  company_id  :bigint           not null
+#  user_id     :bigint
 #
 # Indexes
 #
-#  index_reviews_on_company_id  (company_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (company_id => companies.id)
+#  index_reviews_on_user_id  (user_id)
 #
 class ReviewSerializer
   include FastJsonapi::ObjectSerializer
