@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.integer :score
-      t.string :Company
+      t.string :company
       t.string :belongs_to
       t.references :user
 

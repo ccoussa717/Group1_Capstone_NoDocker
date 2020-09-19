@@ -3,8 +3,8 @@
 # Table name: reviews
 #
 #  id          :bigint           not null, primary key
-#  Company     :string
 #  belongs_to  :string
+#  company     :string
 #  description :string
 #  score       :integer
 #  title       :string

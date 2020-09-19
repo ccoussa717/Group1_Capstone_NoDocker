@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_202851) do
     t.string "title"
     t.string "description"
     t.integer "score"
-    t.string "Company"
+    t.string "company"
     t.string "belongs_to"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
