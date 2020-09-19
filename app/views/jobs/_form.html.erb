@@ -62,8 +62,11 @@
 
 
     <div class="columns">
-
-
+      <div class="field column">
+        <div class="control">
+          <%= f.input :company, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company" %>
+        </div>
+      </div>
       <div class="field column">
         <div class="control">
           <%= f.input :url, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company Website", placeholder: "http://company.com" %>

@@ -4,28 +4,20 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :require_account_manager, only: [:new, :create, :edit, :update, :destroy]
 
-  # GET /jobs
-  # GET /jobs.json
   def index
     @jobs = Job.all.order("created_at desc")
   end
 
-  # GET /jobs/1
-  # GET /jobs/1.json
   def show
   end
 
-  # GET /jobs/new
   def new
     @job = current_user.jobs.build
   end
 
-  # GET /jobs/1/edit
   def edit
   end
 
-  # POST /jobs
-  # POST /jobs.json
   def create
     @job = current_user.jobs.build(job_params)
 
@@ -40,8 +32,6 @@ class JobsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /jobs/1
-  # PATCH/PUT /jobs/1.json
   def update
     respond_to do |format|
       if @job.update(job_params)
@@ -54,8 +44,6 @@ class JobsController < ApplicationController
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
   def destroy
     @job.destroy
     respond_to do |format|
@@ -65,19 +53,16 @@ class JobsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_job
       @job = Job.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def job_params
       params.require(:job).permit(:title, :description, :url, :job_type, :location, :company, :remote_ok, :appy_url, :avatar)
     end
 
     def require_account_manager
       return head :unauthorized unless current_user.account_manager?
-
-      # Instead of returning head unauth, we should render a template.
     end
 end

@@ -5,15 +5,10 @@
 #  id                     :bigint           not null, primary key
 #  account_manager        :boolean          default(TRUE)
 #  admin                  :boolean          default(FALSE)
-#  card_brand             :string
-#  card_exp_month         :string
-#  card_exp_year          :string
-#  card_last4             :string
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
-#  expires_at             :string
 #  failed_attempts        :integer          default(0), not null
 #  first_name             :string
 #  last_name              :string

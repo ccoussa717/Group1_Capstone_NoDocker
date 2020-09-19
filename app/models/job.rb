@@ -7,6 +7,7 @@
 #  avatar      :string
 #  company     :string
 #  description :string
+#  job_author  :string
 #  job_type    :string
 #  location    :string
 #  remote_ok   :boolean
@@ -21,5 +22,4 @@ class Job < ApplicationRecord
     mount_uploader :avatar, AvatarUploader
 
     JOB_TYPES = ["Full-time", "Part-time"]
-
 end

@@ -7,6 +7,7 @@
 #  avatar      :string
 #  company     :string
 #  description :string
+#  job_author  :string
 #  job_type    :string
 #  location    :string
 #  remote_ok   :boolean
