@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: companies
+#
+#  id         :bigint           not null, primary key
+#  image_url  :string
+#  name       :string
+#  slug       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  name: MyString
+  image_url: MyString
+  slug: MyString
+
+two:
+  name: MyString
+  image_url: MyString
+  slug: MyString

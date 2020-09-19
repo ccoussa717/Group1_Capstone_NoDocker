@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-    id: 2,
+    id: 0,
     name: "Chris Coussa",
     email: "ccoussa717@gmail.com",
     password: "password",
@@ -81,4 +81,41 @@ user = User.new(
     user_id: user.id,
     remote_ok: true
   },
+  ])
+
+
+  companies = Company.create([
+    {
+      name: "GreggsJobs",
+      image_url: "/assets/images/logos/greggs_jobs.png"
+    },
+    {
+      name: "Facebook",
+      image_url: "/assets/images/logos/facebook.png"
+    },
+    {
+      name: "AirBnB",
+      image_url: "/assets/images/logos/airbnb.png"
+    },
+  ])
+
+  reviews = Review.create([
+    {
+      title: "Greate Company",
+      description: "This company is new and is a greate place to work!",
+      score: "5",
+      company: companies.first
+    },
+    {
+      title: "Horrible Tech Giant",
+      description: "Don't work for a FAANG! They are horible Tech Giants!",
+      score: "1",
+      company: companies.second
+    },
+    {
+      title: "Good place to work",
+      description: "Not a bad place to work. Free cereal and you can work on other projects",
+      score: "4",
+      company: companies.third
+    }
   ])
