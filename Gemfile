@@ -24,6 +24,7 @@ gem "figaro"
 gem 'foreman'
 gem 'friendly_id'
 gem 'gravatar_image_tag'
+gem 'image_magick'
 gem 'mini_magick'
 gem 'name_of_person'
 gem 'pagy'
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker'
   gem 'guard'
+  gem 'guard-livereload'
   gem 'rb-readline'
 end
 

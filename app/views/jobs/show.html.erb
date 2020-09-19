@@ -22,6 +22,12 @@
 
   <div class="column is-2 is-offset-1 has-text-centered">
 
+    <% if !@job.avatar.file.nil? %>
+      <%= link_to image_tag(@job.avatar_url(:thumb), alt: @job.job_author, class: "has-text-centered"), @job.url %>
+    <% end %>
+
+    <h5 class="is-5 has-text-centered"><%= link_to @job.job_author, @job.url %></h5>
+
     <div class="mt2 mb4">
     <%= link_to @job.url do %>
       <i class="fa fa-globe"></i>
@@ -30,7 +36,7 @@
 
     <%= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-fullwidth is-link" %>
 
-    <% if current_user.try(:admin) %>
+    <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">
         <li class="pv1 f6">Admin controls: </li>
         <li class="pv1 inline-block">
