@@ -2,8 +2,7 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :require_account_manager, only: [:new, :create, :edit, :update, :destroy]
-
+  
   def index
     if(params.has_key?(:job_type))
       @jobs = Job.where(job_type: params[:job_type]).order("created_at desc")
@@ -66,7 +65,4 @@ class JobsController < ApplicationController
       params.require(:job).permit(:title, :description, :url, :job_type, :location, :company, :remote_ok, :appy_url, :avatar)
     end
 
-    def require_account_manager
-      return head :unauthorized unless current_user.account_manager?
-    end
 end
