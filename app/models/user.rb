@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
-#  account_manager        :boolean          default(TRUE)
+#  account_manager        :boolean          default(FALSE)
 #  admin                  :boolean          default(FALSE)
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
