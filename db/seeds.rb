@@ -15,7 +15,8 @@ user = User.new(
   )
   user.save!
   
-  Job.create!([{
+  Job.create!([
+    {
     title: "React Engineer",
     company: "GreggsJobs",
     description: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Venenatis dapibus posuere. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna.",
@@ -80,42 +81,42 @@ user = User.new(
     location: "California",
     user_id: user.id,
     remote_ok: true
-  },
+  }
   ])
 
 
-  companies = Company.create([
-    {
-      name: "GreggsJobs",
-      image_url: "/assets/images/logos/greggs_jobs.png"
-    },
-    {
-      name: "Facebook",
-      image_url: "/assets/images/logos/facebook.png"
-    },
-    {
-      name: "AirBnB",
-      image_url: "/assets/images/logos/airbnb.png"
-    },
-  ])
+  # companies = Company.create([
+  #   {
+  #     name: "GreggsJobs",
+  #     image_url: "/assets/images/logos/greggs_jobs.png"
+  #   },
+  #   {
+  #     name: "Facebook",
+  #     image_url: "/assets/images/logos/facebook.png"
+  #   },
+  #   {
+  #     name: "AirBnB",
+  #     image_url: "/assets/images/logos/airbnb.png"
+  #   },
+  # ])
 
-  reviews = Review.create([
-    {
-      title: "Greate Company",
-      description: "This company is new and is a greate place to work!",
-      score: "5",
-      company: companies.first
-    },
-    {
-      title: "Horrible Tech Giant",
-      description: "Don't work for a FAANG! They are horible Tech Giants!",
-      score: "1",
-      company: companies.second
-    },
-    {
-      title: "Good place to work",
-      description: "Not a bad place to work. Free cereal and you can work on other projects",
-      score: "4",
-      company: companies.third
-    }
-  ])
+  # reviews = Review.create([
+  #   {
+  #     title: "Greate Company",
+  #     description: "This company is new and is a greate place to work!",
+  #     score: "5",
+  #     company: companies.first
+  #   },
+  #   {
+  #     title: "Horrible Tech Giant",
+  #     description: "Don't work for a FAANG! They are horible Tech Giants!",
+  #     score: "1",
+  #     company: companies.second
+  #   },
+  #   {
+  #     title: "Good place to work",
+  #     description: "Not a bad place to work. Free cereal and you can work on other projects",
+  #     score: "4",
+  #     company: companies.third
+  #   }
+  # ])
