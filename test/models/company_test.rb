@@ -2,18 +2,20 @@
 #
 # Table name: companies
 #
-#  id             :bigint           not null, primary key
-#  company_author :string
-#  image_url      :string
-#  name           :string
-#  slug           :string
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  user_id        :bigint
+#  id         :bigint           not null, primary key
+#  image_url  :string
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint           not null
 #
 # Indexes
 #
 #  index_companies_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 require 'test_helper'
 

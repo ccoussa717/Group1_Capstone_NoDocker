@@ -17,13 +17,8 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
+class Company < ApplicationRecord
+  belongs_to :user
 
-one:
-  name: MyString
-  image_url: MyString
-  user: one
-
-two:
-  name: MyString
-  image_url: MyString
-  user: two
+  has_many :reviews
+end

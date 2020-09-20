@@ -18,7 +18,6 @@
 #
 #  fk_rails_...  (company_id => companies.id)
 #
-class ReviewSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :title, :description, :score
+class Review < ApplicationRecord
+  belongs_to :company
 end

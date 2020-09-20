@@ -14,12 +14,10 @@ class ReviewsTest < ApplicationSystemTestCase
     visit reviews_url
     click_on "New Review"
 
-    fill_in "Company", with: @review.Company
-    fill_in "Belongs to", with: @review.belongs_to
+    fill_in "Company", with: @review.company_id
     fill_in "Description", with: @review.description
     fill_in "Score", with: @review.score
     fill_in "Title", with: @review.title
-    fill_in "User", with: @review.user
     click_on "Create Review"
 
     assert_text "Review was successfully created"
@@ -30,12 +28,10 @@ class ReviewsTest < ApplicationSystemTestCase
     visit reviews_url
     click_on "Edit", match: :first
 
-    fill_in "Company", with: @review.Company
-    fill_in "Belongs to", with: @review.belongs_to
+    fill_in "Company", with: @review.company_id
     fill_in "Description", with: @review.description
     fill_in "Score", with: @review.score
     fill_in "Title", with: @review.title
-    fill_in "User", with: @review.user
     click_on "Update Review"
 
     assert_text "Review was successfully updated"

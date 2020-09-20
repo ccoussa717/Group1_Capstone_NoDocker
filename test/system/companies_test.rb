@@ -16,8 +16,7 @@ class CompaniesTest < ApplicationSystemTestCase
 
     fill_in "Image url", with: @company.image_url
     fill_in "Name", with: @company.name
-    fill_in "Slug", with: @company.slug
-    fill_in "User", with: @company.user
+    fill_in "User", with: @company.user_id
     click_on "Create Company"
 
     assert_text "Company was successfully created"
@@ -30,8 +29,7 @@ class CompaniesTest < ApplicationSystemTestCase
 
     fill_in "Image url", with: @company.image_url
     fill_in "Name", with: @company.name
-    fill_in "Slug", with: @company.slug
-    fill_in "User", with: @company.user
+    fill_in "User", with: @company.user_id
     click_on "Update Company"
 
     assert_text "Company was successfully updated"
