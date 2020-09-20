@@ -2,13 +2,14 @@
 #
 # Table name: companies
 #
-#  id         :bigint           not null, primary key
-#  image_url  :string
-#  name       :string
-#  slug       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :bigint
+#  id             :bigint           not null, primary key
+#  company_author :string
+#  image_url      :string
+#  name           :string
+#  slug           :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  user_id        :bigint
 #
 # Indexes
 #

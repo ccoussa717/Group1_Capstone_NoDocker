@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :companies
   resources :jobs
+  
   authenticate :user, lambda { |u| u.admin? } do
   mount Sidekiq::Web => '/sidekiq'
   end

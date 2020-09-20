@@ -1,6 +1,14 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!, except: [:index, :show]
+
+  # Get avg score for Companies based on reviews
+  def av_score
+    reviews.average(:score).round(2).to_f
+  end
+
+
   # GET /companies
   # GET /companies.json
   def index
