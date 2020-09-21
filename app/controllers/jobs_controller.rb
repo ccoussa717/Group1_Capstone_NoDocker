@@ -55,6 +55,10 @@ class JobsController < ApplicationController
     end
   end
 
+  def search
+    @jobs = Job.where(company LIKE ?, "%" +params[:q]+ "%")
+  end
+
   private
 
     def set_job
