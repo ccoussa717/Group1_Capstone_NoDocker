@@ -7,10 +7,10 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :score %>
-    <%= f.association :company %>
+    <%= f.input :company %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "button is-primary is-medium is-rounded mv4" %>
   </div>
 <% end %>
