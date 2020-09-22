@@ -9,7 +9,7 @@
 user = User.new(
   id: 0,
   name: "Chris Coussa",
-  email: "ccoussa717@gmail.com",
+  email: "test@trestaccount1.com",
   password: "password",
   password_confirmation: "password"
 )
@@ -111,12 +111,12 @@ reviews = Review.create([
     title: "Horrible Tech Giant",
     description: "Don't work for a FAANG! They are horible Tech Giants!",
     score: "1",
-    company_id: companies.second
+    company_id: companies.first
   },
   {
     title: "Good place to work",
     description: "Not a bad place to work. Free cereal and you can work on other projects",
     score: "4",
-    company_id: companies.third
+    company_id: companies.first
   }
 ])
