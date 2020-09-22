@@ -10,5 +10,6 @@ module JobBoard
     config.application_name = 'Job Board'
     config.load_defaults 5.1
 
+    config.assets.initialize_on_precompile = false
   end
 end
