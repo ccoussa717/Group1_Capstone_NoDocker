@@ -33,6 +33,7 @@ class JobsController < ApplicationController
     job_type = params[:job_type]
     job_title = params[:title]
 
+    current_user.save!
 
     respond_to do |format|
       if @job.save
