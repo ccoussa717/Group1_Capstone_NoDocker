@@ -7,6 +7,10 @@
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white">
     <%= render "shared/flash_notice" %>
     <%= render "shared/header" %>
+
+    <div class="container center">
+        <img src="/assets/greggs_jobs.png" width="250" height="250">
+    </div>
  
     <main class="px-4 lg:px-10">
       <%= content_for?(:content) ? yield(:content) : yield %>
