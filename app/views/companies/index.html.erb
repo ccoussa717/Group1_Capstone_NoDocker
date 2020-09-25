@@ -18,9 +18,17 @@
         <td><%= company.name %></td>
         <td><%= company.image_url %></td>
         <td><%= company.user_id %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <ul class="pv3">
+        <li class="pv1 f6">Admin controls: </li>
+        <li class="pv1 inline-block">
+          <%= link_to 'Show', company, class: 'button is-small is-link is-outlined' %>
+        </li>
+        <li class="pv1 inline-block">
+          <%= link_to 'Edit', edit_company_path(company), class: 'button is-small is-link is-outlined' %>
+        </li>
+        <li class="pv1 inline-block">
+          <%= link_to 'Delete', @company, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %>
+        </li>
       </tr>
     <% end %>
   </tbody>

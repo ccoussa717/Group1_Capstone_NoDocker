@@ -2,6 +2,8 @@
 <html class="antialiased">
   <%= render "shared/head" %>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white">
     <%= render "shared/flash_notice" %>
     <%= render "shared/header" %>
@@ -9,6 +11,8 @@
     <main class="px-4 lg:px-10">
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
+
+    <%= render "shared/footer" %>
 
   </body>
 </html>

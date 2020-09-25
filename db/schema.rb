@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_09_20_173219) do
-=======
-ActiveRecord::Schema.define(version: 2020_09_19_223022) do
->>>>>>> master
+ActiveRecord::Schema.define(version: 2020_09_25_044548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,17 +18,9 @@ ActiveRecord::Schema.define(version: 2020_09_19_223022) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
-<<<<<<< HEAD
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-=======
-    t.string "slug"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "company_author"
->>>>>>> master
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
@@ -67,20 +55,11 @@ ActiveRecord::Schema.define(version: 2020_09_19_223022) do
     t.string "title"
     t.string "description"
     t.integer "score"
-<<<<<<< HEAD
     t.bigint "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_reviews_on_company_id"
-=======
-    t.string "company"
-    t.string "belongs_to"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "review_author"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
->>>>>>> master
+    t.index ["company_id"], name: "index_reviews_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,8 +82,6 @@ ActiveRecord::Schema.define(version: 2020_09_19_223022) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "job_author"
-    t.boolean "moderator"
-    t.boolean "account_manager", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true

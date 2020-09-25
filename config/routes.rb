@@ -1,8 +1,11 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :reviews
-  resources :companies
+  
+  resources :companies do 
+    resources :reviews 
+  end
+
   resources :jobs
   
   authenticate :user, lambda { |u| u.admin? } do
@@ -12,6 +15,6 @@ Rails.application.routes.draw do
   mount SimpleDiscussion::Engine => "/forum"
 
   devise_for :users
-  root to: 'jobs#index'
+  root to: 'home#index'
 
 end

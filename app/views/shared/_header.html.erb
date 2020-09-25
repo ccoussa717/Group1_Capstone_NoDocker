@@ -1,33 +1,50 @@
+
 <header class="mb-4">
-  <nav class="flex flex-wrap items-center justify-between px-3 py-3 text-gray-700 bg-gray-100 lg:px-10">
-    <div class="flex items-center mr-6 flex-no-shrink">
-      <a href="/">
-       <img src="/assets/logos/greggs_jobs.png" alt="GreggsJobs" style="width:125px;height:150px;">
+  <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        
       </a>
-    </div>
-    <div class="block lg:hidden">
-      <button class="flex items-center px-3 py-2 border border-gray-500 rounded text-grey hover:text-gray-600 hover:border-gray-600">
-        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-      </button>
+
+      <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </span>
     </div>
 
-    <div class="items-center block w-full mt-2 text-center lg:flex lg:flex-row lg:flex-1 lg:mt-0 lg:text-left lg:justify-end">
-      <% if user_signed_in? %>
-      <div id="navbar" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-            <p class="control">
-              <%= link_to 'Post Job', new_job_path, class: "navbar-item button is-primary is-rounded" %>
-            </p>
-        <%= link_to "Companies", companies_path, class: "btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>  
-        <%= link_to "Reviews", reviews_path, class: "btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
-        <%= link_to "Edit account", edit_user_registration_path, class: "btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-default mb-2 lg:mb-0 block" %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class:"btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
-        <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
-      <% end %>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+
+        <a class="navbar-item" href="/companies">
+          Companies
+        </a>
+        
+        <a class="navbar-item" href="/jobs">
+          View Job
+        </a>
+      </div>
+
+      <div class="items-center block w-full mt-2 text-center lg:flex lg:flex-row lg:flex-1 lg:mt-0 lg:text-left lg:justify-end">
+        <% if user_signed_in? %>
+        <div id="navbar" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+              <p class="control">
+                <%= link_to 'Post Job', new_job_path, class: "navbar-item button is-link is-rounded" %>
+              </p>
+
+          <%= link_to "Edit account", edit_user_registration_path, class: "btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-default mb-2 lg:mb-0 block" %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class:"btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
+          <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
+        <% end %>
+        </div>
       </div>
     </div>
   </nav>

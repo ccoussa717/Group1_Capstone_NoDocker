@@ -1,19 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="columns pt4 pb7">  
+  <div class="column is-7 is-offset-1">
+    <div class="container center">
+      <p id="notice"><%= notice %></p>
+      <div class="columns">
+        <div class="column">
+          <p>
+            <strong>Name:</strong>
+            <%= @company.name %>
+          </p>
+        </div>
+        <div class="column">
+          <p>
+          <strong>Image url:</strong>
+          <%= @company.image_url %>
+        </p>
+        </div>
+        <div class="column">
+        <p>
+          <strong>User:</strong>
+          <%= @company.user_id %>
+        </p>
+        </div>
+      </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @company.image_url %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @company.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+      <ul class="pv3">
+        <li class="pv1 f6">Admin controls: </li>
+        <li class="pv1 inline-block">
+          <%= link_to 'Reviews', company_review_path(@company), class: 'button is-small is-link is-outlined' %></li>
+        <li class="pv1 inline-block">
+          <%= link_to 'Edit', edit_company_review_path(@company), class: 'button is-small is-link is-outlined' %></li>
+        <li class="pv1 inline-block">
+          <%= link_to 'Delete', @review, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+      </ul>
+    </div> 
+  </div>
+</div>

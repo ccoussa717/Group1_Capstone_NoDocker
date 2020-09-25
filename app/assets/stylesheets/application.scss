@@ -3,6 +3,8 @@
 @import "bulma";
 @import "functions";
 @import "jobs";
+@import "reviews";
+@import "companies";
 
 .notification {
   border-radius: 0;
@@ -20,4 +22,9 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 9px !important;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

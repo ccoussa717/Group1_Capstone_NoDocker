@@ -1,5 +1,10 @@
-<h1>New Company</h1>
-
-<%= render 'form', company: @company %>
-
-<%= link_to 'Back', companies_path %>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <h1 class="title is-3">Create Company</h1>
+        <%= render 'form', company: @company %>
+      </div>
+    </div>
+  </div>
+</section>

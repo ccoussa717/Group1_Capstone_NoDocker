@@ -1,5 +1,4 @@
-
-<%= simple_form_for(@review) do |f| %>
+<%= simple_form_for([@company, @review]) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -7,10 +6,8 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :score %>
-    <%= f.input :company %>
   </div>
 
-  <div class="form-actions">
     <%= f.button :submit, class: "button is-primary is-medium is-rounded mv4" %>
-  </div>
+
 <% end %>

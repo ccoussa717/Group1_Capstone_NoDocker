@@ -3,7 +3,6 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
-#  account_manager        :boolean          default(FALSE)
 #  admin                  :boolean          default(FALSE)
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
@@ -16,7 +15,6 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  locked_at              :datetime
-#  moderator              :boolean
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
