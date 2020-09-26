@@ -23,6 +23,7 @@ class Company < ApplicationRecord
   has_many :reviews
 
   def avg_score
+    return 0 unless reviews.present?
     reviews.average(:score).round(2).to_f
   end
 end
