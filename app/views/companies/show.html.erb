@@ -18,20 +18,51 @@
         <div class="column">
         <p>
           <strong>User:</strong>
-          <%= @company.user_id %>
+          <%= @company.user.name %>
         </p>
+
+        </div>
+          <div class="column">
+          <p>
+            <strong>Company Average Score</strong>
+            <%= @company.avg_score %>
+          </p>
         </div>
       </div>
 
-      <ul class="pv3">
-        <li class="pv1 f6">Admin controls: </li>
-        <li class="pv1 inline-block">
-          <%= link_to 'Reviews', company_review_path(@company), class: 'button is-small is-link is-outlined' %></li>
-        <li class="pv1 inline-block">
-          <%= link_to 'Edit', edit_company_review_path(@company), class: 'button is-small is-link is-outlined' %></li>
-        <li class="pv1 inline-block">
-          <%= link_to 'Delete', @review, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
-      </ul>
+      <% if current_user.try(:admin) || current_user == @company.user %>
+          <ul class="pv3">
+            <li class="pv1 f6">Admin controls: </li>
+            <li class="pv1 inline-block">
+              <%= link_to 'Edit', edit_company_path(@company), class: 'button is-small is-link is-outlined' %>
+            </li>
+            <li class="pv1 inline-block">
+              <%= link_to 'Delete', @company, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %>
+            </li>
+          </ul>
+        <% end %>
     </div> 
+    
+    <% @reviews.each do |review| %>
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Title:</strong>
+        <%= review.title %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= review.description %>
+      </p>
+
+      <p>
+        <strong>Score:</strong>
+        <%= review.score %>
+      </p>
+    <% end %>
+
+
+    <%= link_to 'Create Review', new_company_review_path(@company.id) %>
   </div>
 </div>
