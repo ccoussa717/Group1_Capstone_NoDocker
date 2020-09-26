@@ -27,7 +27,7 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.new(company_params)
+    @company = current_user.companies.new(company_params)
 
     respond_to do |format|
       if @company.save
@@ -72,6 +72,6 @@ class CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def company_params
-      params.require(:company).permit(:name, :image_url, :user_id)
+      params.require(:company).permit(:name, :image_url)
     end
 end
